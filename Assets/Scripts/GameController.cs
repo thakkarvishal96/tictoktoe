@@ -149,12 +149,20 @@ public class GameController : MonoBehaviour {
 			SetGameOverText("It's a Draw!");
 			SetPlayerColorsInactive();
 		} 
-		else
+		else if(winningPlayer == "X")
 		{
-			SetGameOverText(winningPlayer + " Wins!");
+			SetGameOverText("I'm Batman");
+            BT.SetActive(false);
+            HI.SetActive(false);
+            SP.SetActive(true);
+		}
+        else if (winningPlayer == "O")
+        {
+            SetGameOverText("The Superman");
             BT.SetActive(true);
             HI.SetActive(false);
-		}
+            SP.SetActive(false);
+        }
 		restartButton.SetActive(true);
 	}
 
